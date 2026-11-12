@@ -1,0 +1,160 @@
+body{
+    margin:0;
+    padding:20px;
+    font-family:Arial, sans-serif;
+    background:#e8f5e9;
+}
+
+.container{
+    display:grid;
+    grid-template-areas:
+        "header header"
+        "navbar navbar"
+        "content right"
+        "footer footer";
+
+    grid-template-columns: 2fr 4fr;
+    gap:5px;
+}
+
+.header,
+.navbar,
+.content,
+.right,
+.footer{
+    background:white;
+    border:2px solid #8d87da;
+    padding:15px;
+}
+
+.header{
+    grid-area:header;
+    text-align:center;
+    background:#c8e6c9;
+}
+
+.logo{
+    width:90px;
+    display:block;
+    margin:auto;
+}
+
+.navbar{
+    grid-area:navbar;
+    text-align:center;
+    background: #8d87da;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    margin:0 30px;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.navbar a:hover{
+    color:#c8e6c9;
+}
+
+.content{
+    grid-area:content;
+}
+
+.content h2{
+    color: #8d87da;
+    text-align:center;
+}
+
+/* Medium-sized images */
+.images{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.images img{
+    width:250px;
+    height:200px;
+    object-fit:cover;
+    border:3px solid #8d87da;
+    border-radius:10px;
+    box-shadow:0 2px 8px gray;
+}
+
+.right{
+    grid-area:right;
+    background:#f1f8e9;
+}
+
+label{
+    display:block;
+    margin-top:10px;
+    font-weight:bold;
+    color: #8d87da;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border:1px solid #8d87da;
+    border-radius:5px;
+    box-sizing:border-box;
+}
+
+textarea{
+    height:200px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    margin-top:15px;
+    background: #8d87da;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background: #8d87da;
+}
+
+.footer{
+    grid-area:footer;
+    text-align:center;
+    color:white;
+    background:#9792de;
+}
+
+@media(max-width:768px){
+
+    .container{
+        grid-template-areas:
+            "header"
+            "navbar"
+            "content"
+            "right"
+            "footer";
+
+        grid-template-columns:2fr;
+    }
+
+    .navbar a{
+        display:block;
+        margin:10px 0;
+    }
+
+    .images img{
+        width:220px;
+        height:180px;
+    }
+}
